@@ -6,8 +6,8 @@ from api.v1.views import app_views
 from flask_cors import (CORS, cross_origin)
 
 
-@app_views.route('/unathourized', methods=['GET'], strict_slashes=False)
-def unathorized()-> str:
+@app_views.route('/unauthorized', methods=['GET'], strict_slashes=False)
+def unauthorized() -> str:
     """GET /api/v1/unauthorized
     Return:
       - Error handler for 401
