@@ -41,9 +41,11 @@ def not_found(error) -> str:
     return jsonify({"error": "Not found"}), 404
 
 
-excluded_paths = ['/api/v1/status/',
-                      '/api/v1/unauthorized/',
-                      '/api/v1/forbidden/']
+excluded_paths = [
+    '/api/v1/status/',
+    '/api/v1/unauthorized/',
+    '/api/v1/forbidden/'
+]
 
 
 @app.before_request
