@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """ Module of Index views
 """
-from flask import jsonify, abort
+from flask import Flask, jsonify, abort, request
 from api.v1.views import app_views
+from flask_cors import (CORS, cross_origin)
 
 
-@app_views.route('/unathourized', method=['GET', strict_slashes=False])
+@app_views.route('/unathourized', methods=['GET'], strict_slashes=False)
 def unathorized()-> str:
     """GET /api/v1/unauthorized
     Return:
