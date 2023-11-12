@@ -2,6 +2,7 @@
 """This module checks if a given API route (path requires authentication)"""
 from flask import request
 from typing import List, TypeVar
+from os import getenv
 
 
 class Auth():
