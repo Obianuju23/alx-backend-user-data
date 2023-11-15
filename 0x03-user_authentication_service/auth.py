@@ -32,9 +32,12 @@ class Auth:
         """Takes in email and password arguments"""
         try:
             self._db.find_user_by(email=email)
-            raise ValueError(f"User {email} already exists")
+            raise ValueError("User {} already exists".format(email))
         except NoResultFound:
-            return self._db.add_user(email, _hash_password(password))
+            pass
+        pwd = _hash_password(password)
+        user = self._db.add_user(email=email, hashed_password=pwd)
+        return user
 
     def valid_login(self, email: str, password: str) -> bool:
         """ validates credentials """
