@@ -8,7 +8,7 @@ from uuid import uuid4
 from typing import Union
 
 
-def _hash_password(self, password: str) -> bytes:
+def _hash_password(password: str) -> bytes:
     """returns salted hash of the input password, hashed with bcrypt.hashpw"""
     salt = bcrypt.gensalt()
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
