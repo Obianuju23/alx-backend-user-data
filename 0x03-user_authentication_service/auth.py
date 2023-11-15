@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Defines _hash_password method, takes in a pswd string args&returns bytes"""
 import bcrypt
+from db import DB
+from user import User
+from sqlalchemy.orm.exc import NoResultFound
+from uuid import uuid4
 from typing import Union
 
 
