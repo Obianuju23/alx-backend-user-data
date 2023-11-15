@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Defines _hash_password method, takes in a pswd string args&returns bytes"""
 import bcrypt
+from typing import Union
 
 
 def _hash_password(self, password: str) -> bytes:
