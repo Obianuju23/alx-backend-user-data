@@ -47,7 +47,6 @@ class Auth:
                 return False
         except Exception:
             return False
-        
 
     def create_session(self, email: str) -> str:
         """ creates a session for a user with the email """
