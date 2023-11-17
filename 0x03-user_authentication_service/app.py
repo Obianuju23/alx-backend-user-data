@@ -21,7 +21,7 @@ def users() -> str:
     password = request.form.get('password')
     try:
         AUTH.register_user(email, password)
-        msg = {'email': email, 'message': 'user created'}, 200
+        msg = {'email': email, 'message': 'user created'}
         return jsonify(msg)
     except ValueError:
         return jsonify({'message': 'email already registered'}), 400
@@ -74,6 +74,10 @@ def get_reset_password_token() -> str:
         abort(403)
     msg = {"email": email, "reset_token": reset_token}
     return jsonify(msg), 200
+
+
+
+
 
 
 @app.route("/reset_password", methods=["PUT"])
